@@ -1,0 +1,84 @@
+.menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 0 10px;
+}
+
+.menu-card {
+  margin: 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 14px;
+  width: 300px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.menu-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.menu-card a {
+  color: inherit;
+}
+
+.menu-image {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+.name {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.address,
+.city,
+.phone {
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+default-button {
+  position: absolute;
+  top: 10px;
+  left: 16px;
+  width: 85px;
+  margin: 0;
+  margin-top: -10px;
+}
+
+app-search {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  default-button {
+    max-width: 90px;
+  }
+
+  app-search {
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .menu-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}

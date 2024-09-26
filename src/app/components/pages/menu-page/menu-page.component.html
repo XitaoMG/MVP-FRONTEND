@@ -1,0 +1,23 @@
+<app-not-found
+  [visible]="!menus"
+  notFoundMessage="Menu Not Found"
+  resetLinkText="Back To Homepage"
+>
+</app-not-found>
+
+<div class="menu-container">
+  <div class="menu-card" *ngFor="let menu of menus">
+    <img class="menu-image" [src]="menu.image" [alt]="menu.name" />
+
+    <div class="details">
+      <h2 class="name">{{ menu.name }}</h2>
+      <div class="price">{{ menu.price | currency : "BRL" }}</div>
+      <p class="description">{{ menu.description }}</p>
+      <default-button
+        text="Back"
+        [routerLink]="'/restaurant'"
+        [fontSizeRem]="0.8"
+      ></default-button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<app-search></app-search>
+<app-not-found
+  [visible]="!restaurants || !restaurants.length"
+  notFoundMessage="Restaurant Not Found"
+  resetLinkRoute="/restaurant"
+  resetLinkText="Back To Search Page"
+>
+</app-not-found>
+
+<div class="menu-container">
+  <div class="menu-card" *ngFor="let restaurant of restaurants">
+    <a [routerLink]="['/restaurant', restaurant.id]">
+      <img
+        class="menu-image"
+        [src]="restaurant.image"
+        [alt]="restaurant.name"
+      />
+      <div class="details">
+        <h2 class="name">{{ restaurant.name }}</h2>
+        <div class="description">
+          <span class="address">{{ restaurant.address }}</span>
+          <span class="city">
+            <br />{{ restaurant.city }} - {{ restaurant.country }}
+          </span>
+          <span class="phone"> <br />{{ restaurant.phoneNumber }} </span>
+        </div>
+      </div>
+    </a>
+  </div>
+  <default-button
+    text="Logout"
+    [fontSizeRem]="0.9"
+    (onClick)="logout()"
+  ></default-button>
+</div>
